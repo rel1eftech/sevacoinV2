@@ -56,7 +56,7 @@
     items.forEach(function (el) { el.classList.add("visible"); });
   }
 
-  // Message forms (the contact section and the enquiry modal): inline validation per field, live counter, sending and
+  // Message form (the enquiry modal): inline validation per field, live counter, sending and
   // success states; both post to api/contact.php. Returns { reset } so the modal can clear the form when it closes.
   var wireMessageForm = function (form) {
     var status = form.querySelector(".form-status");
@@ -117,11 +117,9 @@
     if (again) again.addEventListener("click", function () { success.hidden = true; setStatus("", ""); form.elements.name.focus(); });
     return { reset: function () { clearFields(); success.hidden = true; } };
   };
-  var contactForm = document.getElementById("contact-form");
-  if (contactForm) wireMessageForm(contactForm);
 
   // Enquiry modal: opened by every [data-enquiry] (header button, phone menu), closed by its buttons, Escape or a
-  // click on the backdrop. Focus returns to the opener. Browsers without <dialog> go to the contact section instead.
+  // click on the backdrop. Focus returns to the opener. Browsers without <dialog> go to the How it works section instead.
   var enq = document.getElementById("enquiry-modal");
   var enqForm = document.getElementById("enquiry-form");
   var openers = document.querySelectorAll("[data-enquiry]");
@@ -145,7 +143,7 @@
       if (enqOpener && enqOpener.focus) enqOpener.focus();
     });
   } else {
-    Array.prototype.forEach.call(openers, function (b) { b.addEventListener("click", function () { location.hash = "#contact"; }); });
+    Array.prototype.forEach.call(openers, function (b) { b.addEventListener("click", function () { location.hash = "#get-started"; }); });
   }
 
   // Newsletter: posts to api/subscribe.php and shows the answer next to the field.
