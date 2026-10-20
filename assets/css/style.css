@@ -1496,12 +1496,12 @@ body.rd-open { overflow: hidden; }
 @media (max-width: 920px) { .brand .seva-wm { width: 88px; } .brand-name { font-size: .74rem; } }
 
 /* The apparel link: an icon-only t-shirt mark beside the language picker (the label lives in aria-label/title) */
-.nav-wear { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 8px; color: #c9d8ea; }
+.nav-wear { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; color: #c9d8ea; }
 .nav-wear:hover, .nav-wear:focus-visible { color: #fff; background: rgba(255, 255, 255, .08); }
 .nav-wear:focus-visible { outline: 2px solid var(--seva-aqua); outline-offset: 2px; }
-.nav-wear .nav-ico { width: 21px; height: 21px; }
+.nav-wear .nav-ico { width: 30px; height: 30px; }
 .nav-wear:hover .nav-ico { color: #fff; }
-@media (max-width: 920px) { .nav-wear { width: 40px; height: 40px; } .nav-wear .nav-ico { width: 23px; height: 23px; } }
+@media (max-width: 920px) { .nav-wear { width: 46px; height: 46px; } .nav-wear .nav-ico { width: 32px; height: 32px; } }
 
 /* Mission: the wordmark on light, and the video card's coin in brand steel blue with the SEVA "E" */
 .mission-word .sv-word { --wm-ink: var(--seva-navy); --wm-b2: var(--seva-blue); --wm-b3: var(--seva-aqua); width: min(78%, 560px); overflow: visible;
@@ -1700,10 +1700,10 @@ body.rd-open { overflow: hidden; }
 .enq-mark .seva-logo { width: 120px; }
 @media (max-width: 560px) { .enq-mark { width: auto; height: auto; padding: 8px 10px; } .enq-mark .seva-logo { width: 100px; } }
 .mission-word .sv-word { width: min(70%, 440px); height: auto; margin: 0 auto; filter: none; }
-/* Header wordmark: the horizontal white SEVA Coin logo (assets/brand/seva-coin-logo-dark.svg) */
-.brand .seva-logo-mark { width: clamp(150px, 12.5vw, 184px); }
-.site-header.is-stuck .brand .seva-logo-mark { width: clamp(134px, 11vw, 160px); }
-@media (max-width: 920px) { .brand .seva-logo-mark { width: 144px; } }
+/* Header wordmark: the stacked white SEVA Coin logo, COIN under SEVA (assets/brand/seva-coin-logo-white.png) */
+.brand .seva-logo-mark { width: clamp(100px, 8.4vw, 118px); }
+.site-header.is-stuck .brand .seva-logo-mark { width: clamp(92px, 7.6vw, 108px); }
+@media (max-width: 920px) { .brand .seva-logo-mark { width: 108px; } }
 
 /* Hero coin presentation: a soft aura lifting it off the globe,  */
 .hero-coin .seva-coin { position: relative; z-index: 2; }
