@@ -3,7 +3,7 @@
    ========================================================= */
 
 :root {
-  /* SEVA brand palette (from the SEVA Healthcare logo: navy letters, blue and aqua "E" bars) */
+  /* SEVA brand palette (from the SEVA Coin logo: navy letters, blue and aqua "E" bars) */
   --seva-navy: #304e73;
   --seva-blue: #6197c9;
   --seva-aqua: #9ad2e2;
@@ -33,7 +33,7 @@
   --radius-sm: 12px;
   --shadow: 0 20px 50px -20px rgba(7, 17, 31, 0.25);
 
-  /* SEVA Healthcare's own typeface: one clean geometric sans for headings and text */
+  /* SEVA Coin's typeface: one clean geometric sans for headings and text */
   --font-display: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
@@ -1100,9 +1100,6 @@ p { margin: 0; }
 .nav-links a:hover::after, .nav-links a.active::after, .nav-links a:focus-visible::after { transform: scaleX(1); }
 .nav-links a.active { color: #fff; }
 .nav-ico { width: 17px; height: 17px; flex: 0 0 auto; color: #9fe8ff; filter: drop-shadow(0 0 6px rgba(143, 230, 255, .45)); }
-.nav-wear .nav-ico { width: 21px; height: 21px; }
-.nav-wear:hover .nav-ico { color: #fff; }
-@media (max-width: 920px) { .nav-wear .nav-ico { width: 24px; height: 24px; } }
 .nav-enquiry-link { display: none; }
 
 .btn-enquiry { gap: 8px; border-color: rgba(160, 210, 255, .3); color: #e6eef8; background: rgba(8, 20, 45, .3); }
@@ -1498,10 +1495,13 @@ body.rd-open { overflow: hidden; }
 .site-header.is-stuck .brand .seva-wm { width: clamp(76px, 6.4vw, 92px); }
 @media (max-width: 920px) { .brand .seva-wm { width: 88px; } .brand-name { font-size: .74rem; } }
 
-/* The Apparel link: the t-shirt mark with its label */
-.nav-wear { color: #c9d8ea; }
-.nav-wear .nav-ico { width: 17px; height: 17px; }
-@media (max-width: 920px) { .nav-wear .nav-ico { width: 20px; height: 20px; } }
+/* The apparel link: an icon-only t-shirt mark beside the language picker (the label lives in aria-label/title) */
+.nav-wear { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 8px; color: #c9d8ea; }
+.nav-wear:hover, .nav-wear:focus-visible { color: #fff; background: rgba(255, 255, 255, .08); }
+.nav-wear:focus-visible { outline: 2px solid var(--seva-aqua); outline-offset: 2px; }
+.nav-wear .nav-ico { width: 21px; height: 21px; }
+.nav-wear:hover .nav-ico { color: #fff; }
+@media (max-width: 920px) { .nav-wear { width: 40px; height: 40px; } .nav-wear .nav-ico { width: 23px; height: 23px; } }
 
 /* Mission: the wordmark on light, and the video card's coin in brand steel blue with the SEVA "E" */
 .mission-word .sv-word { --wm-ink: var(--seva-navy); --wm-b2: var(--seva-blue); --wm-b3: var(--seva-aqua); width: min(78%, 560px); overflow: visible;
@@ -1511,7 +1511,7 @@ body.rd-open { overflow: hidden; }
 .mv-coin { background: none; box-shadow: 0 0 60px 6px rgba(154, 210, 226, .3); }
 .mv-coin .seva-coin { --coin-size: 100%; width: 100%; }
 
-/* Footer brand and the link back to SEVA Healthcare */
+/* Footer brand and the link back to the parent network */
 .site-footer .brand .seva-wm { width: 104px; }
 .footer-parent a, .footer-parent-links a { color: var(--seva-aqua); text-decoration: none; }
 .footer-parent a:hover, .footer-parent-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -1682,23 +1682,23 @@ body.rd-open { overflow: hidden; }
 .supply-grid dd { margin: 6px 0 0; font-size: 1.15rem; font-weight: 700; color: var(--seva-deep); }
 @media (max-width: 480px) { .supply-grid { grid-template-columns: 1fr; } }
 
-/* Footer brand: the coin, a thin rule, then the white SEVA Healthcare logo straight on the dark ground (no white badge) */
+/* Footer brand: the coin, a thin rule, then the white SEVA Coin logo straight on the dark ground (no white badge) */
 .site-footer .brand { align-items: center; gap: 18px; }
 .footer-coin { --coin-size: 56px; flex: 0 0 auto; filter: drop-shadow(0 10px 18px rgba(61, 155, 255, .32)); }
 .site-footer .brand .seva-logo { padding-left: 18px; border-left: 1px solid rgba(154, 210, 226, .22); }
 
 
-/* The real SEVA Healthcare logo (assets/brand/seva-logo.png; seva-logo-white.png on dark backgrounds) */
+/* The SEVA Coin logo (assets/brand/seva-coin-logo-light.svg; seva-coin-logo-white.png on dark backgrounds) */
 .seva-logo { display: block; height: auto; flex: 0 0 auto; }
 .brand .seva-logo { width: clamp(104px, 9vw, 132px); }
 .site-header.is-stuck .brand .seva-logo { width: clamp(92px, 7.6vw, 112px); }
 @media (max-width: 920px) { .brand .seva-logo { width: 108px; } }
 .site-footer .brand .seva-logo { width: 148px; }
-.vc-top .seva-logo { width: 92px; }
-.ac-cover .seva-logo { width: 84px; opacity: .95; }
+.vc-top .seva-logo { width: 128px; }
+.ac-cover .seva-logo { width: 116px; opacity: .95; }
 .enq-mark { width: auto; height: auto; padding: 10px 14px; }
-.enq-mark .seva-logo { width: 84px; }
-@media (max-width: 560px) { .enq-mark { width: auto; height: auto; padding: 8px 10px; } .enq-mark .seva-logo { width: 70px; } }
+.enq-mark .seva-logo { width: 120px; }
+@media (max-width: 560px) { .enq-mark { width: auto; height: auto; padding: 8px 10px; } .enq-mark .seva-logo { width: 100px; } }
 .mission-word .sv-word { width: min(70%, 440px); height: auto; margin: 0 auto; filter: none; }
 .brand .seva-logo-mark { width: clamp(96px, 8vw, 116px); }
 .site-header.is-stuck .brand .seva-logo-mark { width: clamp(84px, 7vw, 100px); }
