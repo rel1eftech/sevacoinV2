@@ -1700,9 +1700,10 @@ body.rd-open { overflow: hidden; }
 .enq-mark .seva-logo { width: 120px; }
 @media (max-width: 560px) { .enq-mark { width: auto; height: auto; padding: 8px 10px; } .enq-mark .seva-logo { width: 100px; } }
 .mission-word .sv-word { width: min(70%, 440px); height: auto; margin: 0 auto; filter: none; }
-.brand .seva-logo-mark { width: clamp(96px, 8vw, 116px); }
-.site-header.is-stuck .brand .seva-logo-mark { width: clamp(84px, 7vw, 100px); }
-@media (max-width: 920px) { .brand .seva-logo-mark { width: 96px; } }
+/* Header wordmark: the horizontal white SEVA Coin logo (assets/brand/seva-coin-logo-dark.svg) */
+.brand .seva-logo-mark { width: clamp(150px, 12.5vw, 184px); }
+.site-header.is-stuck .brand .seva-logo-mark { width: clamp(134px, 11vw, 160px); }
+@media (max-width: 920px) { .brand .seva-logo-mark { width: 144px; } }
 
 /* Hero coin presentation: a soft aura lifting it off the globe,  */
 .hero-coin .seva-coin { position: relative; z-index: 2; }
