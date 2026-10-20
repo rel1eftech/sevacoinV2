@@ -1500,7 +1500,9 @@ body.rd-open { overflow: hidden; }
 .nav-wear:hover, .nav-wear:focus-visible { color: #fff; background: rgba(255, 255, 255, .08); }
 .nav-wear:focus-visible { outline: 2px solid var(--seva-aqua); outline-offset: 2px; }
 .nav-wear .nav-ico { width: 30px; height: 30px; }
+.nav-wear .nav-ico-fill { fill: rgba(159, 232, 255, .16); transition: fill .2s ease; }
 .nav-wear:hover .nav-ico { color: #fff; }
+.nav-wear:hover .nav-ico-fill { fill: rgba(159, 232, 255, .32); }
 @media (max-width: 920px) { .nav-wear { width: 46px; height: 46px; } .nav-wear .nav-ico { width: 32px; height: 32px; } }
 
 /* Mission: the wordmark on light, and the video card's coin in brand steel blue with the SEVA "E" */
