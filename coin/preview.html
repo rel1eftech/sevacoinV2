@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEVA Coin Options</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/brand/seva-coin-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/coin/seva-coin.css">
+  <style>
+    :root { --bg: #f4f7fa; --card: #ffffff; --ink: #12304f; --muted: #52657a; --line: #dde6ee; --gold: #3a74a8; }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #071526; --card: #0d2238; --ink: #eef3f8; --muted: #9fb2c4; --line: #1d3550; --gold: #9ad2e2; } }
+    :root[data-theme="dark"] { --bg: #071526; --card: #0d2238; --ink: #eef3f8; --muted: #9fb2c4; --line: #1d3550; --gold: #9ad2e2; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Plus Jakarta Sans", system-ui, sans-serif; color: var(--ink); background: var(--bg); }
+    .wrap { width: min(1180px, 100% - 32px); margin: 0 auto; padding: 56px 0 72px; }
+    header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 40px; }
+    .kicker { margin: 0 0 8px; font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+    h1 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.02em; }
+    header p { margin: 8px 0 0; color: var(--muted); max-width: 40em; }
+    .theme { padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: 600 .9rem/1 "Plus Jakarta Sans", system-ui, sans-serif; cursor: pointer; }
+    .theme:focus-visible { outline: 3px solid #c9a24a; outline-offset: 3px; }
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .opt { display: grid; justify-items: center; gap: 22px; padding: 36px 20px 28px; border-radius: 22px; background: var(--card); border: 1px solid var(--line); text-align: center; }
+    .opt .seva-coin { --coin-size: 240px; }
+    .opt h2 { margin: 0; font-size: 1.15rem; }
+    .opt p { margin: 4px 0 0; color: var(--muted); font-size: .92rem; }
+    .tag { display: inline-block; margin-bottom: 8px; padding: 4px 10px; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .12em; color: var(--gold); border: 1px solid currentColor; }
+    footer { margin-top: 32px; color: var(--muted); font-size: .88rem; }
+    code { font-size: .86em; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div>
+        <p class="kicker">SEVA Coin · design review</p>
+        <h1>Three options for the "E"</h1>
+        <p>The same platinum-and-navy coin, flipping between front and back. Pick A, B or C; the caduceus stays a faint watermark behind the symbol.</p>
+      </div>
+      <button type="button" class="theme" id="theme">Switch to dark</button>
+    </header>
+
+    <div class="grid">
+      <section class="opt">
+        <div class="seva-coin" data-seva-coin data-variant="a" data-controls data-label="SEVA Coin, option A: three equal lines"></div>
+        <div><span class="tag">OPTION A · DEFAULT</span><h2>Three lines</h2><p>Three equal bars, no spine: the E of the SEVA logo.</p></div>
+      </section>
+      <section class="opt">
+        <div class="seva-coin" data-seva-coin data-variant="b" data-controls data-label="SEVA Coin, option B: a full E"></div>
+        <div><span class="tag">OPTION B</span><h2>Full E</h2><p>The same bars joined by a spine, middle bar a little shorter.</p></div>
+      </section>
+      <section class="opt">
+        <div class="seva-coin" data-seva-coin data-variant="c" data-controls data-label="SEVA Coin, option C: three small E marks"></div>
+        <div><span class="tag">OPTION C</span><h2>Three E's</h2><p>Three small three-line E marks arranged in a triangle.</p></div>
+      </section>
+    </div>
+
+    <footer>To switch the whole site: set <code>DEFAULT_VARIANT</code> in <code>assets/coin/seva-coin.js</code> to <code>"a"</code>, <code>"b"</code> or <code>"c"</code>.</footer>
+  </main>
+  <script src="../assets/coin/seva-coin.js"></script>
+  <script>
+    (function () {
+      var btn = document.getElementById("theme"), root = document.documentElement;
+      var dark = function () { return root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; };
+      var label = function () { btn.textContent = dark() ? "Switch to light" : "Switch to dark"; };
+      btn.addEventListener("click", function () { root.dataset.theme = dark() ? "light" : "dark"; label(); });
+      label();
+    })();
+  </script>
+</body>
+</html>

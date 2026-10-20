@@ -1,0 +1,8 @@
+# Keep the database config and the API internals out of direct reach.
+# bootstrap.php is only included by the endpoints; nothing here should be fetched directly.
+<IfModule mod_authz_core.c>
+  <FilesMatch "^(bootstrap\.php)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+Options -Indexes

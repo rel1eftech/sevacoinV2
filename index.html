@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SevaCoin — Building Healthcare Equity</title>
+  <meta name="description" content="SevaCoin is a blockchain-based token for healthcare innovation: secure patient data exchange, wellness incentives and community governance.">
+  <meta property="og:title" content="SevaCoin — Building Healthcare Equity">
+  <meta property="og:description" content="Secure, transparent and community-driven. Empowering healthier lives through blockchain.">
+  <meta property="og:image" content="assets/brand/favicon-512.png">
+  <meta name="theme-color" content="#062842">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png?v=15">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/seva-coin-icon-simple.svg?v=15">
+  <link rel="apple-touch-icon" href="assets/brand/favicon-512.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/coin/seva-coin.css?v=20261017a">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261019b">
+
+  <!-- Three.js for the 3D SevaCoin scenes (assets/js/scene.js). If it fails to load, the CSS artwork stays in place. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a href="#hero" class="brand" aria-label="SEVA Coin home">
+        <img class="seva-logo seva-logo-mark" src="assets/brand/seva-logo-white-mark.png" width="1038" height="309" alt="">
+      </a>
+
+      <!-- main.js marks the link of the section in view with .active (the glowing underline) -->
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#get-started">How it works</a>
+        <a href="#supply">Coin supply</a>
+        <!-- Apparel: the SevaWear shop (scrubs, jackets, t-shirts), next to Contact -->
+        <a href="https://www.sevawear.com/" class="nav-wear" target="_blank" rel="noopener" title="SevaWear apparel">
+          <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3 3 6.5l2 3.5 2.2-1.2V21h9.6V8.8L19 10l2-3.5L15.5 3a3.5 3.5 0 0 1-7 0z"/></svg>
+          Apparel<span class="sr-only"> (opens SevaWear in a new tab)</span>
+        </a>
+        <a href="#contact">Contact</a>
+        <!-- phones only: the enquiry button lives in the menu -->
+        <button type="button" class="nav-enquiry-link" data-enquiry>Make an enquiry</button>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language: a flag dropdown that drives GTranslate (its own widget stays hidden in .gtranslate_wrapper) -->
+        <div class="lang notranslate" id="lang">
+          <button type="button" class="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-list" aria-label="Language: English">
+            <img class="lang-flag" src="https://cdn.gtranslate.net/flags/svg/en.svg" width="20" height="14" alt=""><span class="lang-code">EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0h10L5 6z" fill="currentColor"/></svg>
+          </button>
+          <ul class="lang-list" id="lang-list" role="listbox" aria-label="Choose language" hidden>
+            <li role="option" data-lang="ja" data-code="JA" tabindex="-1" title="日本語"><img src="https://cdn.gtranslate.net/flags/svg/ja.svg" width="22" height="15" alt=""><span>JA</span></li>
+            <li role="option" data-lang="fr" data-code="FR" tabindex="-1" title="Français"><img src="https://cdn.gtranslate.net/flags/svg/fr.svg" width="22" height="15" alt=""><span>FR</span></li>
+            <li role="option" data-lang="de" data-code="DE" tabindex="-1" title="Deutsch"><img src="https://cdn.gtranslate.net/flags/svg/de.svg" width="22" height="15" alt=""><span>DE</span></li>
+            <li role="option" data-lang="zh-CN" data-code="ZH-CN" tabindex="-1" title="简体中文"><img src="https://cdn.gtranslate.net/flags/svg/zh-CN.svg" width="22" height="15" alt=""><span>ZH-CN</span></li>
+            <li role="option" data-lang="zh-TW" data-code="ZH-TW" tabindex="-1" title="繁體中文"><img src="https://cdn.gtranslate.net/flags/svg/zh-TW.svg" width="22" height="15" alt=""><span>ZH-TW</span></li>
+            <li role="option" data-lang="pt" data-code="PT-PT" tabindex="-1" title="Português"><img src="https://cdn.gtranslate.net/flags/svg/pt.svg" width="22" height="15" alt=""><span>PT-PT</span></li>
+            <li role="option" data-lang="no" data-code="NO" tabindex="-1" title="Norsk"><img src="https://cdn.gtranslate.net/flags/svg/no.svg" width="22" height="15" alt=""><span>NO</span></li>
+            <li role="option" data-lang="th" data-code="TH" tabindex="-1" title="ไทย"><img src="https://cdn.gtranslate.net/flags/svg/th.svg" width="22" height="15" alt=""><span>TH</span></li>
+            <li role="option" data-lang="es" data-code="ES" tabindex="-1" title="Español"><img src="https://cdn.gtranslate.net/flags/svg/es.svg" width="22" height="15" alt=""><span>ES</span></li>
+          </ul>
+        </div>
+        <div class="gtranslate_wrapper" aria-hidden="true"></div>
+        <button type="button" class="btn btn-ghost btn-sm btn-enquiry" data-enquiry aria-haspopup="dialog" aria-controls="enquiry-modal" aria-label="Make an enquiry" title="Make an enquiry">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg>
+          <span>Enquiry</span>
+        </button>
+        <a href="#get-started" class="btn btn-primary btn-sm">Get SevaCoin</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+      <div class="globe-stage" aria-hidden="true">
+      <div class="hero-sky"></div>
+      <!-- The globe is fixed: no entrance, scale or motion. The animation is a sequence (see assets/js/scene.js):
+           the main coin lands on the globe (0.4s–1.4s); then one string at a time grows out of it (from 1.5s, one
+           every 0.36s), its node lights as the tip arrives and a SevaCoin lands on that node; coins spread over
+           the globe left and right, nearest first. Small coins: 3D from the nodes below (data-coin), CSS fallback from main.js. -->
+      <div class="globe-fixed">
+        <img class="globe" src="assets/img/globe.png" alt="" fetchpriority="high">
+        <svg class="network" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><filter id="net-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+          <g class="links">
+            <path class="link-glow" d="M1110 400 Q1143 298 1290 425" pathLength="1" style="--d:1.50s"/><path id="lk0" class="link" d="M1110 400 Q1143 298 1290 425" pathLength="1" style="--d:1.50s"/>
+            <path class="link-glow" d="M1110 400 Q836 326 765 405" pathLength="1" style="--d:1.86s"/><path id="lk1" class="link" d="M1110 400 Q836 326 765 405" pathLength="1" style="--d:1.86s"/>
+            <path class="link-glow" d="M1110 400 Q1111 387 1240 595" pathLength="1" style="--d:2.22s"/><path id="lk2" class="link" d="M1110 400 Q1111 387 1240 595" pathLength="1" style="--d:2.22s"/>
+            <path class="link-glow" d="M1110 400 Q928 353 770 560" pathLength="1" style="--d:2.58s"/><path id="lk3" class="link" d="M1110 400 Q928 353 770 560" pathLength="1" style="--d:2.58s"/>
+            <path class="link-glow" d="M1110 400 Q1293 341 1355 505" pathLength="1" style="--d:2.94s"/><path id="lk4" class="link" d="M1110 400 Q1293 341 1355 505" pathLength="1" style="--d:2.94s"/>
+            <path class="link-glow" d="M1110 400 Q842 444 790 625" pathLength="1" style="--d:3.30s"/><path id="lk5" class="link" d="M1110 400 Q842 444 790 625" pathLength="1" style="--d:3.30s"/>
+            <path class="link-glow" d="M1110 400 Q1331 236 1420 290" pathLength="1" style="--d:3.66s"/><path id="lk6" class="link" d="M1110 400 Q1331 236 1420 290" pathLength="1" style="--d:3.66s"/>
+            <path class="link-glow" d="M1110 400 Q865 301 655 455" pathLength="1" style="--d:4.02s"/><path id="lk7" class="link" d="M1110 400 Q865 301 655 455" pathLength="1" style="--d:4.02s"/>
+            <path class="link-glow" d="M1110 400 Q1339 419 1425 650" pathLength="1" style="--d:4.38s"/><path id="lk8" class="link" d="M1110 400 Q1339 419 1425 650" pathLength="1" style="--d:4.38s"/>
+            <path class="link-glow" d="M1110 400 Q843 551 805 815" pathLength="1" style="--d:4.74s"/><path id="lk9" class="link" d="M1110 400 Q843 551 805 815" pathLength="1" style="--d:4.74s"/>
+            <path class="link-glow" d="M1110 400 Q1199 463 1375 765" pathLength="1" style="--d:5.10s"/><path id="lk10" class="link" d="M1110 400 Q1199 463 1375 765" pathLength="1" style="--d:5.10s"/>
+            <path class="link-glow" d="M1110 400 Q1338 339 1600 530" pathLength="1" style="--d:5.46s"/><path id="lk11" class="link" d="M1110 400 Q1338 339 1600 530" pathLength="1" style="--d:5.46s"/>
+          </g>
+          <!-- Each node carries data-coin (width of the SevaCoin that lands on it, fraction of the stage) and data-start (when its string leaves the hub) -->
+          <g class="nodes">
+            <circle class="node" cx="1290" cy="425" r="6" data-coin="0.034" data-start="1.50" style="--d:2.10s"/>
+            <circle class="node" cx="765" cy="405" r="6" data-coin="0.046" data-start="1.86" style="--d:2.46s"/>
+            <circle class="node" cx="1240" cy="595" r="6" data-coin="0.036" data-start="2.22" style="--d:2.82s"/>
+            <circle class="node" cx="770" cy="560" r="6" data-coin="0.044" data-start="2.58" style="--d:3.18s"/>
+            <circle class="node" cx="1355" cy="505" r="6" data-coin="0.042" data-start="2.94" style="--d:3.54s"/>
+            <circle class="node" cx="790" cy="625" r="6" data-coin="0.038" data-start="3.30" style="--d:3.90s"/>
+            <circle class="node" cx="1420" cy="290" r="6" data-coin="0.04" data-start="3.66" style="--d:4.26s"/>
+            <circle class="node" cx="655" cy="455" r="6" data-coin="0.048" data-start="4.02" style="--d:4.62s"/>
+            <circle class="node" cx="1425" cy="650" r="6" data-coin="0.044" data-start="4.38" style="--d:4.98s"/>
+            <circle class="node" cx="805" cy="815" r="6" data-coin="0.05" data-start="4.74" style="--d:5.34s"/>
+            <circle class="node" cx="1375" cy="765" r="6" data-coin="0.04" data-start="5.10" style="--d:5.70s"/>
+            <circle class="node" cx="1600" cy="530" r="6" data-coin="0.046" data-start="5.46" style="--d:6.06s"/>
+          </g>
+        </svg>
+        <!-- CSS fallback coins (shown only when the 3D scene is not running). main.js adds one per node, in here, so they drift with the globe. -->
+      </div>
+      <!-- 3D coins (Three.js). The CSS coins below are the fallback and are hidden once this renders. -->
+      <canvas class="scene-3d" data-scene="hero"></canvas>
+    </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <!-- The SEVA Coin (assets/coin): flips front/back on its own. main.js places it
+           over the hub where the network strings start. -->
+      <div class="hero-coin">
+        <span class="hc-aura" aria-hidden="true"></span>
+        <div class="seva-coin" data-seva-coin></div>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow anim" style="--d:.2s"><span class="dot"></span> SevaCoin</p>
+          <h1 class="hero-title anim" style="--d:.35s">
+            <span class="line">Building</span>
+            <span class="line grad">Healthcare</span>
+            <span class="line">Equity</span>
+          </h1>
+          <p class="hero-note anim" style="--d:.55s">
+            Secure, transparent, and community-driven — empowering healthier lives through blockchain.
+          </p>
+          <div class="hero-ctas anim" style="--d:.7s">
+            <a href="#get-started" class="btn btn-glow">Get started <span aria-hidden="true">→</span></a>
+            <a href="#about" class="btn btn-ghost">What is SevaCoin?</a>
+          </div>
+        </div>
+
+        <ul class="hero-stats anim" style="--d:.95s">
+          <li>
+            <div><strong>&lt; 3s</strong><span>Confirmations</span></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </li>
+          <li>
+            <div><strong>99%</strong><span>Less energy</span></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </li>
+          <li>
+            <div><strong>24/7</strong><span>Support</span></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <!-- Light scene: the heading on the left, the SevaCoin on a glass podium with a faint globe and floating glass tiles
+         on the right, three glass cards along the bottom. 3D parts come from assets/js/scene.js; each has a flat fallback. -->
+    <section class="section section-about" id="about">
+      <div class="about-bg" aria-hidden="true">
+        <i class="about-light about-light-1"></i><i class="about-light about-light-2"></i>
+        <i class="about-floor"></i>
+      </div>
+
+      <div class="container about-wrap">
+        <div class="about-head">
+          <p class="eyebrow about-eyebrow">What is SevaCoin?</p>
+          <h2>Secure, transparent, and community-driven — empowering <em>healthier lives</em> through blockchain.</h2>
+          <p>
+            SevaCoin is a blockchain-based token tailored for healthcare innovation.
+            It supports secure patient data exchange, incentivizes wellness programs,
+            and fosters community governance in the health ecosystem.
+          </p>
+        </div>
+
+        <div class="about-scene" aria-hidden="true">
+          <div class="about-stage">
+            <img class="about-coin-fallback" src="assets/img/coin.png?v=20261017L" alt="">
+            <canvas class="scene-3d" data-scene="coin" data-radius="0.36" data-zoom="1.5" data-ring-scale="0.8" data-coin-y="0.14" data-theme="light" data-showcase></canvas>
+          </div>
+          <!-- floating glass tiles: health record, protection, community, documents -->
+          <span class="about-tile about-tile-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M4 12h4l2-3 3 6 2-3h5"/></svg></span>
+          <span class="about-tile about-tile-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8M8 12h8"/></svg></span>
+          <span class="about-tile about-tile-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
+          <span class="about-tile about-tile-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></span>
+        </div>
+
+        <div class="about-cards">
+          <article class="about-card reveal">
+            <div class="about-text">
+              <div class="about-badges">
+                <span class="about-num">01</span>
+                <span class="about-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+              </div>
+              <h3>Secure patient data exchange</h3>
+              <p>Patient data moves securely, protected by advanced cryptographic security 24/7.</p>
+              <a href="#read-data" class="about-go" data-read="data" aria-haspopup="dialog" aria-controls="explore-reader" aria-label="Learn more about secure patient data exchange">→</a>
+            </div>
+            <div class="about-art" aria-hidden="true">
+              <img class="about-art-img" src="assets/img/cards/photo-data.jpg" alt="">
+            </div>
+          </article>
+
+          <article class="about-card reveal">
+            <div class="about-text">
+              <div class="about-badges">
+                <span class="about-num">02</span>
+                <span class="about-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+              </div>
+              <h3>Wellness program incentives</h3>
+              <p>Wellness programs reward healthy habits in SevaCoin, sent anywhere in under 3 seconds.</p>
+              <a href="#read-wellness" class="about-go" data-read="wellness" aria-haspopup="dialog" aria-controls="explore-reader" aria-label="Learn more about wellness program incentives">→</a>
+            </div>
+            <div class="about-art" aria-hidden="true">
+              <img class="about-art-img" src="assets/img/cards/photo-wellness.jpg" alt="">
+            </div>
+          </article>
+
+          <article class="about-card reveal">
+            <div class="about-text">
+              <div class="about-badges">
+                <span class="about-num">03</span>
+                <span class="about-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
+              </div>
+              <h3>Community governance</h3>
+              <p>A transparent, community-driven health ecosystem, steered by the people it serves.</p>
+              <a href="#read-governance" class="about-go" data-read="governance" aria-haspopup="dialog" aria-controls="explore-reader" aria-label="Learn more about community governance">→</a>
+            </div>
+            <div class="about-art" aria-hidden="true">
+              <img class="about-art-img" src="assets/img/cards/photo-community.jpg" alt="">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY ================= -->
+    <!-- The design (assets/img/why/scene.jpg) is the stage. Over it: the 3D floor (grid + rings spreading out from under
+         the podium), which sits behind a cutout of the phone/coin/podium placed at exactly the same spot (hero.png), two 3D
+         orbit rings with glowing balls turning around the phone and coin (scene.js), and the card and phone text written over the picture. On phones
+         the centre of the design shows above the four cards as plain glass cards. -->
+    <section class="section section-why" id="why">
+      <h2 class="sr-only">Why SevaCoin: secure, fast, eco-friendly and globally accessible.</h2>
+      <!-- plain sides beyond the 16:9 frame: the design's own edge colours, stretched -->
+      <i class="why-side why-side-l" aria-hidden="true"></i><i class="why-side why-side-r" aria-hidden="true"></i>
+      <div class="why-frame">
+        <div class="why-tilt">
+          <div class="why-stage" aria-hidden="true">
+            <img class="why-scene" src="assets/img/why/scene.jpg?v=20261017L" alt="">
+            <img class="why-center" src="assets/img/why/center.jpg?v=20261017L" alt="">
+            <div class="why-floor"><div class="why-ground"><i class="why-grid"></i><i class="why-rings"></i><i class="why-rings why-rings-2"></i></div></div>
+            <!-- 3D orbit rings with glowing balls, turning behind the phone, coin and podium (Three.js) -->
+            <canvas class="scene-3d" data-scene="ring" data-cx="0.5" data-cy="0.47" data-rings="0.215:1.25:-0.3:0.22:2;0.28:1.05:0.4:-0.15:3" data-coin="0.5813,0.479,0.109,0.206" data-light></canvas>
+            <!-- the wallet, written over the phone's screen -->
+            <div class="why-screen">
+              <div class="ws-head">SevaCoin</div>
+              <div class="ws-balance"><small>Total Balance</small><strong>5,500.25 <em>SVC</em></strong><b>+12.4% &nbsp;+$420.50</b></div>
+              <div class="ws-actions"><span>Send</span><span>Receive</span><span>Swap</span></div>
+              <div class="ws-recent"><span>Recent Transactions</span><a>See all</a></div>
+              <div class="ws-row"><span class="ws-name">Medical Support<small>2 mins ago</small></span><span class="ws-amt up">+250.00 SVC<small>2 mins ago</small></span></div>
+              <div class="ws-row"><span class="ws-name">Community Care<small>1 hour ago</small></span><span class="ws-amt down">-120.00 SVC<small>1 hour ago</small></span></div>
+              <div class="ws-row"><span class="ws-name">Global Health Fund<small>1 day ago</small></span><span class="ws-amt up">+500.00 SVC<small>1 day ago</small></span></div>
+            </div>
+          </div>
+          <div class="why-cards">
+            <article class="why-card why-card-1">
+              <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <div class="why-text"><h3>Secure</h3><p>Advanced cryptographic security ensures your transactions and wallet are protected 24/7.</p></div>
+            </article>
+            <article class="why-card why-card-2">
+              <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+              <div class="why-text"><h3>Fast</h3><p>Lightning-fast transactions with confirmation times under 3 seconds worldwide.</p></div>
+            </article>
+            <article class="why-card why-card-3">
+              <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg></span>
+              <div class="why-text"><h3>Eco-Friendly</h3><p>Proof-of-Stake consensus mechanism uses 99% less energy than traditional mining.</p></div>
+            </article>
+            <article class="why-card why-card-4">
+              <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+              <div class="why-text"><h3>Global Accessibility</h3><p>Send and receive payments anywhere in the world, instantly.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GET STARTED ================= -->
+    <!-- The design (assets/img/steps/scene.jpg: earth from orbit, three glass cards) is the stage. Over it: the heading,
+         the text and links written on the cards, a call to action; behind the cards (masked), animated light strings
+         with lit nodes travelling along them. On phones the sky shows above plain glass cards. -->
+    <section class="section section-steps" id="get-started">
+      <div class="steps-frame">
+        <!-- wider-than-16:9 screens: a copy of the picture scaled to the full width sits behind the frame, lined up so
+             the earth's rim carries on past both edges; the frame's own picture fades into it at the sides (CSS) -->
+        <i class="steps-wide" aria-hidden="true"></i>
+        <picture aria-hidden="true"><source media="(min-width: 921px)" srcset="assets/img/steps/scene.jpg?v=20261017L"><img class="steps-scene" src="assets/img/steps/sky.jpg" alt=""></picture>
+        <svg class="steps-strings" viewBox="0 0 1672 941" preserveAspectRatio="none" aria-hidden="true">
+          <defs><filter id="str-blur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+          <path class="str-glow" d="M-40 640 C 200 560 380 520 640 560 S 1120 640 1712 520" style="--d:-1.7s"/><path id="str1" class="str" d="M-40 640 C 200 560 380 520 640 560 S 1120 640 1712 520" style="--d:-1.7s"/>
+          <path class="str-glow" d="M-40 820 C 300 760 640 700 980 760 S 1500 860 1712 700" style="--d:-3.4s"/><path id="str2" class="str" d="M-40 820 C 300 760 640 700 980 760 S 1500 860 1712 700" style="--d:-3.4s"/>
+          <g class="str-nodes">
+            <circle r="5"><animateMotion dur="13.5s" begin="-2.0s" repeatCount="indefinite"><mpath href="#str1"/></animateMotion></circle>
+            <circle r="5"><animateMotion dur="13.5s" begin="-8.0s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1"><mpath href="#str1"/></animateMotion></circle>
+            <circle r="5"><animateMotion dur="16.0s" begin="-4.0s" repeatCount="indefinite"><mpath href="#str2"/></animateMotion></circle>
+            <circle r="5"><animateMotion dur="16.0s" begin="-10.0s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1"><mpath href="#str2"/></animateMotion></circle>
+          </g>
+        </svg>
+
+        <div class="steps-head">
+          <p class="eyebrow steps-eyebrow"><i></i><span>Getting started</span><i></i></p>
+          <h2>Three steps to your first <em>SevaCoin</em></h2>
+          <p class="steps-intro">Follow these simple steps to begin your journey with SevaCoin.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step step-1 reveal">
+            <span class="step-num" aria-hidden="true">01</span>
+            <div class="step-art" aria-hidden="true"><img src="assets/img/cards/wallet.png?v=20261017L" alt=""></div>
+            <h3><span class="sr-only">Step 1: </span>Choose your wallet</h3>
+            <p>A wallet is necessary for people wanting to use, trade or hold SevaCoin. You can pick a wallet.</p>
+            <a href="#read-wallet" class="step-link" data-read="wallet" aria-haspopup="dialog" aria-controls="explore-reader">Learn more <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="step step-2 reveal">
+            <span class="step-num" aria-hidden="true">02</span>
+            <div class="step-art" aria-hidden="true"><img src="assets/img/cards/gear.png?v=20261017L" alt=""></div>
+            <h3><span class="sr-only">Step 2: </span>Configure your wallet</h3>
+            <p>After downloading, you can configure your wallet according to our guide.</p>
+            <a href="#read-setup" class="step-link" data-read="setup" aria-haspopup="dialog" aria-controls="explore-reader">Guide <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="step step-3 reveal">
+            <span class="step-num" aria-hidden="true">03</span>
+            <div class="step-art" aria-hidden="true"><img src="assets/img/cards/coins.png?v=20261017L" alt=""></div>
+            <h3><span class="sr-only">Step 3: </span>Get some SevaCoin</h3>
+            <p>There are lots of ways to get your hands on some SevaCoin.</p>
+            <a href="#read-get" class="step-link" data-read="get" aria-haspopup="dialog" aria-controls="explore-reader">Learn more <span aria-hidden="true">→</span></a>
+          </li>
+        </ol>
+
+        <div class="steps-cta">
+          <a href="#contact" class="btn btn-glow">Get SevaCoin <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COIN SUPPLY (placeholder: fill in the published figures before launch) ================= -->
+    <section class="section section-supply" id="supply" aria-labelledby="supply-title">
+      <div class="container supply-wrap">
+        <div class="supply-copy reveal">
+          <p class="eyebrow eyebrow-dark"><span class="dot"></span> Coin supply</p>
+          <h2 id="supply-title">How SEVA Coin is issued</h2>
+          <p>The total supply, how it is distributed and when it is released will be published here before launch, so every holder can see exactly how SEVA Coin is issued.</p>
+        </div>
+        <dl class="supply-grid reveal">
+          <div><dt>Total supply</dt><dd>To be announced</dd></div>
+          <div><dt>Distribution</dt><dd>To be announced</dd></div>
+          <div><dt>Release schedule</dt><dd>To be announced</dd></div>
+          <div><dt>Contract address</dt><dd>Published at launch</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= MISSION ================= -->
+    <!-- "SEVA" written in tiles of the SevaCoin symbol (an SVG: the word is a clip path over the tile grid), then a
+         video card drawn in code (opens assets/video/sevacoin.mp4 in a modal, see main.js) beside the mission text. -->
+    <section class="section section-mission" id="what-is-sevacoin" aria-labelledby="mission-title">
+      <div class="mission-bg" aria-hidden="true"><i class="mission-cross mission-cross-l"></i><i class="mission-cross mission-cross-r"></i></div>
+      <div class="container mission-wrap">
+        <figure class="mission-word reveal">
+          <img class="sv-word" src="assets/brand/seva-logo-mark.png" width="1038" height="309" alt="SEVA">
+        </figure>
+
+        <div class="mission-grid">
+          <button type="button" class="mission-video reveal" data-video="assets/video/sevacoin.mp4" aria-haspopup="dialog" aria-controls="video-modal">
+            <span class="mv-orbit" aria-hidden="true"><i></i><i></i></span>
+            <span class="mv-text" aria-hidden="true"><b>What is</b><strong>SevaCoin?</strong></span>
+            <span class="mv-coin" aria-hidden="true"><span class="seva-coin" data-seva-coin data-static data-label="SEVA Coin"></span></span>
+            <span class="mv-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+            <span class="sr-only">Play the video: What is SevaCoin?</span>
+          </button>
+
+          <div class="mission-copy reveal">
+            <p class="eyebrow mission-eyebrow">Our mission</p>
+            <h2 id="mission-title">Do Only Good <em>Everyday.</em></h2>
+            <p>SevaCoin is a blockchain-based token tailored for healthcare innovation. It supports secure patient data exchange, incentivizes wellness programs, and fosters community governance in the health ecosystem.</p>
+            <!-- Community links: replace each href="#" with the real SevaCoin profile URL -->
+            <ul class="mission-social" aria-label="SevaCoin community">
+              <li><a href="#" class="ms-link ms-twitter" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1d9bf0" d="M23.95 4.57a10 10 0 0 1-2.82.77 4.96 4.96 0 0 0 2.16-2.72c-.95.56-2 .96-3.13 1.18a4.92 4.92 0 0 0-8.38 4.48A13.98 13.98 0 0 1 1.64 3.16a4.82 4.82 0 0 0-.67 2.48c0 1.71.87 3.21 2.19 4.1a4.9 4.9 0 0 1-2.23-.62v.06a4.92 4.92 0 0 0 3.95 4.83 5 5 0 0 1-2.21.08 4.94 4.94 0 0 0 4.6 3.42A9.87 9.87 0 0 1 0 19.54a14 14 0 0 0 7.56 2.21c9.05 0 14-7.5 14-13.99 0-.21 0-.42-.02-.63A9.94 9.94 0 0 0 24 4.59z"/></svg>
+                <span>Twitter</span></a></li>
+              <li><a href="#" class="ms-link ms-reddit" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ff4500"/><ellipse cx="12" cy="14" rx="6.4" ry="4.4" fill="#fff"/><circle cx="17.6" cy="10.4" r="1.5" fill="#fff"/><circle cx="6.4" cy="10.4" r="1.5" fill="#fff"/><circle cx="9.6" cy="13.4" r="1" fill="#ff4500"/><circle cx="14.4" cy="13.4" r="1" fill="#ff4500"/><path d="M9.6 16c1.4.9 3.4.9 4.8 0" stroke="#ff4500" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M12 9.6l1-4.2 3 .7" stroke="#fff" stroke-width=".9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16.8" cy="6.2" r="1.1" fill="#fff"/></svg>
+                <span>Reddit</span></a></li>
+              <li><a href="#" class="ms-link ms-discord" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#5865f2" d="M19.6 5.2A18 18 0 0 0 15.3 4l-.5 1a16.6 16.6 0 0 0-5.6 0l-.5-1a18 18 0 0 0-4.3 1.2C1.7 9.3.9 13.3 1.3 17.2a18 18 0 0 0 5.3 2.7l1.1-1.8a11.6 11.6 0 0 1-1.8-.9l.4-.3a12.8 12.8 0 0 0 11.4 0l.4.3c-.6.4-1.2.7-1.8.9l1.1 1.8a18 18 0 0 0 5.3-2.7c.5-4.5-.8-8.5-3.1-12z"/><ellipse cx="8.6" cy="13" rx="1.8" ry="2" fill="#fff"/><ellipse cx="15.4" cy="13" rx="1.8" ry="2" fill="#fff"/></svg>
+                <span>Discord</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VERIFIED HUMAN (placeholder: World ID integration coming soon) ================= -->
+    <section class="section section-verify" id="verified" aria-labelledby="verify-title">
+      <div class="container verify-wrap">
+        <div class="verify-copy reveal">
+          <p class="eyebrow"><span class="dot"></span> Verified Human <span class="soon-pill">Coming soon</span></p>
+          <h2 id="verify-title">One real person behind <em>every SEVA Coin.</em></h2>
+          <p class="verify-lead">Every SEVA Coin holder will be verified as a real, unique person. That keeps community rewards and votes fair: they reach people, not bots or duplicate accounts.</p>
+          <p class="verify-lead">We are integrating <strong>World ID</strong> (Worldcoin) to do this privately. You prove you are a unique human without handing over your name or any health information.</p>
+          <ul class="verify-points">
+            <li>
+              <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+              <div><h3>Real people only</h3><p>Each verification belongs to one unique human.</p></div>
+            </li>
+            <li>
+              <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+              <div><h3>Private by design</h3><p>SEVA learns that you are verified, not who you are.</p></div>
+            </li>
+            <li>
+              <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <div><h3>One account per person</h3><p>Duplicate and automated accounts are kept out.</p></div>
+            </li>
+          </ul>
+          <!-- Placeholder: enable and wire to the World ID flow when the integration is ready -->
+          <div class="verify-cta">
+            <button type="button" class="btn btn-worldid" disabled aria-describedby="worldid-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+              Verify with World ID
+            </button>
+            <span class="verify-note" id="worldid-note">Coming soon</span>
+          </div>
+        </div>
+
+        <!-- Placeholder status card -->
+        <div class="verify-card reveal" aria-hidden="true">
+          <div class="vc-top">
+            <img class="seva-logo logo-badge" src="assets/brand/seva-logo.png" width="1038" height="427" alt="">
+            <span class="vc-chip">Identity</span>
+          </div>
+          <div class="vc-orb"><i></i><i></i><i></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <p class="vc-title">Verified human</p>
+          <p class="vc-sub">Proof of personhood via World ID</p>
+          <dl class="vc-rows">
+            <div><dt>Status</dt><dd><span class="vc-dot"></span> Not started</dd></div>
+            <div><dt>Unique person</dt><dd>—</dd></div>
+            <div><dt>Data shared with SEVA</dt><dd>None</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= YOUR SEVA AVATAR (placeholder) ================= -->
+    <section class="section section-avatar" id="avatar" aria-labelledby="avatar-title">
+      <div class="container avatar-wrap">
+        <!-- Placeholder avatar card -->
+        <div class="avatar-card reveal" aria-hidden="true">
+          <div class="ac-cover"><img class="seva-logo logo-badge" src="assets/brand/seva-logo.png" width="1038" height="427" alt=""></div>
+          <div class="ac-face">
+            <svg viewBox="0 0 120 120"><defs><linearGradient id="ac-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9ad2e2"/><stop offset="1" stop-color="#6197c9"/></linearGradient></defs><circle cx="60" cy="60" r="60" fill="url(#ac-g)"/><circle cx="60" cy="48" r="20" fill="#fff" opacity=".9"/><path d="M22 104a38 38 0 0 1 76 0" fill="#fff" opacity=".9"/></svg>
+            <span class="ac-coin"><span class="seva-coin" data-seva-coin data-static data-label="SEVA Coin"></span></span>
+          </div>
+          <p class="ac-name">Your name</p>
+          <p class="ac-handle">@seva-holder</p>
+          <div class="ac-badges">
+            <span class="ac-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Verified human: soon</span>
+            <span class="ac-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9h6M9 12h6M9 15h6"/></svg> SEVA Coin holder</span>
+          </div>
+          <div class="ac-wallet"><span>Linked wallet</span><code>Not connected</code></div>
+        </div>
+
+        <div class="avatar-copy reveal">
+          <p class="eyebrow eyebrow-dark"><span class="dot"></span> Your SEVA Avatar <span class="soon-pill soon-pill-light">Coming soon</span></p>
+          <h2 id="avatar-title">An avatar linked to <em>your SEVA Coin.</em></h2>
+          <p>Each holder will get a SEVA Avatar that is linked to their SEVA Coin. It is how you will appear across the SEVA community, with your Verified Human status showing there is a real person behind it.</p>
+          <ul class="avatar-points">
+            <li><b>Linked to your coin</b><span>Your avatar and your SEVA Coin wallet belong together.</span></li>
+            <li><b>Backed by Verified Human</b><span>One person, one avatar.</span></li>
+            <li><b>Yours to shape</b><span>Customisation arrives with the launch.</span></li>
+          </ul>
+          <button type="button" class="btn btn-soon" disabled>Create my avatar · Coming soon</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESOURCES ================= -->
+    <!-- Explore: the design (assets/img/explore/scene.jpg: sky, earth, light sweeps) is the stage. The intro, button and
+         the four rows are laid out on it; a row hovered or focused turns into the dark navy panel with gold accents
+         (main.js). On phones the backdrop covers the top and the rows stack below the intro. -->
+    <section class="section section-explore" id="resources">
+      
+      <div class="container explore-grid">
+        <div class="explore-intro">
+          <p class="eyebrow explore-eyebrow"><span>Explore</span><i></i></p>
+          <h2>Find out more about <em>SevaCoin</em><b>.</b></h2>
+          <p>The Seva Foundation, posts from the developers, announcements from the team and answers to the questions we hear most.</p>
+          <a href="#contact" class="explore-contact">Can't find it? Talk to us <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+
+        <ol class="explore-list">
+          <li class="explore-item">
+            <a href="#read-foundation" class="explore-row" data-read="foundation" aria-expanded="false" aria-haspopup="dialog" aria-controls="explore-reader">
+              <span class="explore-num">01</span>
+              <span class="explore-ico explore-ico-bank" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9 10v8M15 10v8M19 10v8"/><path d="M3 18h18M2 21h20"/></svg></span>
+              <span class="explore-title">
+                <strong>Foundation</strong><small>Learn more about the Seva Foundation and its mission for health &amp; trust</small>
+                <span class="explore-tags"><i>Mission</i><i>Health</i><i>Trust</i></span>
+              </span>
+              <span class="explore-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </li>
+          <li class="explore-item">
+            <a href="#read-blogs" class="explore-row" data-read="blogs" aria-expanded="false" aria-haspopup="dialog" aria-controls="explore-reader">
+              <span class="explore-num">02</span>
+              <span class="explore-ico explore-ico-doc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg></span>
+              <span class="explore-title">
+                <strong>Blogs</strong><small>Stay up to date with blog posts from SevaCoin developers</small>
+                <span class="explore-tags"><i>Developers</i><i>Updates</i><i>Posts</i></span>
+              </span>
+              <span class="explore-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </li>
+          <li class="explore-item">
+            <a href="#read-announcements" class="explore-row" data-read="announcements" aria-expanded="false" aria-haspopup="dialog" aria-controls="explore-reader">
+              <span class="explore-num">03</span>
+              <span class="explore-ico explore-ico-bell" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg></span>
+              <span class="explore-title">
+                <strong>Announcements</strong><small>Announcements from the SevaCoin team can be found here</small>
+                <span class="explore-tags"><i>Team</i><i>News</i><i>Updates</i></span>
+              </span>
+              <span class="explore-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </li>
+          <li class="explore-item">
+            <a href="#read-faqs" class="explore-row" data-read="faqs" aria-expanded="false" aria-haspopup="dialog" aria-controls="explore-reader">
+              <span class="explore-num">04</span>
+              <span class="explore-ico explore-ico-help" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-5 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M9.5 9.5a2 2 0 0 1 3.9.6c0 1.3-2 1.6-2 3"/><path d="M11.5 15.5h.01"/></svg></span>
+              <span class="explore-title">
+                <strong>FAQs</strong><small>Read our responses to frequently asked questions about SevaCoin</small>
+                <span class="explore-tags"><i>Questions</i><i>Answers</i><i>Support</i></span>
+              </span>
+              <span class="explore-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= APPAREL (SevaWear) ================= -->
+    <!-- Heading, then the collection and the shop button. Product pictures are placeholders: replace the files in
+         assets/img/apparel/ with real SevaWear photos when ready. -->
+    <section class="section section-apparel" id="apparel" aria-labelledby="apparel-title">
+      <div class="container">
+        <div class="apparel-head reveal">
+          <p class="eyebrow eyebrow-dark"><span class="dot"></span> SevaWear</p>
+          <h2 id="apparel-title">Apparel</h2>
+          <p>Wear SEVA — scrubs, jackets and t-shirts with the SEVA logo</p>
+        </div>
+
+        <div class="collection collection-only">
+          <ul class="wear-grid">
+            <li class="wear-card reveal">
+              <a href="https://www.sevawear.com/" target="_blank" rel="noopener">
+                <span class="wear-art"><img src="assets/img/apparel/scrubs.jpg" width="396" height="222" loading="lazy" alt="Navy SevaWear scrub top on a marble stand (placeholder image)"></span>
+                <span class="wear-body"><span><b>Scrubs</b><small>For long shifts on the ward</small></span><span class="wear-chev" aria-hidden="true">›</span></span>
+                <span class="sr-only">View scrubs on SevaWear (opens in a new tab)</span>
+              </a>
+            </li>
+            <li class="wear-card reveal">
+              <a href="https://www.sevawear.com/" target="_blank" rel="noopener">
+                <span class="wear-art"><img src="assets/img/apparel/jacket.jpg" width="395" height="222" loading="lazy" alt="Navy SevaWear zip jacket on a marble stand (placeholder image)"></span>
+                <span class="wear-body"><span><b>Jacket</b><small>A clean layer over scrubs</small></span><span class="wear-chev" aria-hidden="true">›</span></span>
+                <span class="sr-only">View jackets on SevaWear (opens in a new tab)</span>
+              </a>
+            </li>
+            <li class="wear-card reveal">
+              <a href="https://www.sevawear.com/" target="_blank" rel="noopener">
+                <span class="wear-art"><img src="assets/img/apparel/tshirt.jpg" width="396" height="222" loading="lazy" alt="White SevaWear t-shirt on a marble stand (placeholder image)"></span>
+                <span class="wear-body"><span><b>T-shirt</b><small>Everyday tee with the SEVA logo</small></span><span class="wear-chev" aria-hidden="true">›</span></span>
+                <span class="sr-only">View t-shirts on SevaWear (opens in a new tab)</span>
+              </a>
+            </li>
+          </ul>
+          <div class="apparel-cta reveal">
+            <a href="https://www.sevawear.com/" class="btn-shop" target="_blank" rel="noopener">Shop Apparel <span class="btn-shop-arrow" aria-hidden="true">›</span><span class="sr-only"> (opens SevaWear in a new tab)</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SUPPORT + CONTACT ================= -->
+    <!-- Enquiry: features and heading on the left, the coin on its podium in the centre, a glass form on the right.
+         The form posts to api/contact.php (see assets/js/main.js). -->
+    <section class="section section-contact" id="contact">
+      <img class="cx-waves" src="assets/img/contact/waves.jpg" alt="" aria-hidden="true">
+      <div class="container cx-grid">
+        <div class="cx-info">
+          <p class="eyebrow cx-eyebrow"><span>Always by your side</span><i></i></p>
+          <h2>Be the first to use our <em>SevaCoin!</em></h2>
+          <ul class="cx-features">
+            <li>
+              <span class="cx-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></span>
+              <div><h3>24/7 Support</h3><p>Need help? Get your requests solved quickly via support team.</p></div>
+            </li>
+            <li>
+              <span class="cx-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+              <div><h3>Community</h3><p>Join the conversations on our worldwide OKEx communities.</p></div>
+            </li>
+            <li>
+              <span class="cx-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+              <div><h3>Academy</h3><p>Learn blockchain and Seva Coin for free.</p></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cx-stage" aria-hidden="true"><i class="cx-glow"></i><img src="assets/img/contact/coin.png?v=20261017L" alt=""><span class="cx-orbit"><i></i><i></i><i></i></span></div>
+
+        <form class="cx-form" id="contact-form" action="api/contact.php" method="post" novalidate>
+          <!-- honeypot: hidden from people, filled in by bots; the server ignores such submissions -->
+          <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="cx-head">
+            <h3>Contact Us</h3>
+            <p><span class="cx-dot"></span>Our support team is here for you 24/7.</p>
+          </div>
+          <div class="cx-row">
+          <div class="cx-field" data-field="name">
+            <label for="cx-name">Your name</label>
+            <div class="cx-input"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></i><input id="cx-name" type="text" name="name" placeholder="Enter your name" autocomplete="name" maxlength="120" required></div>
+            <p class="cx-error" id="cx-name-err" role="alert"></p>
+          </div>
+          <div class="cx-field" data-field="email">
+            <label for="cx-email">Email</label>
+            <div class="cx-input"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i><input id="cx-email" type="email" name="email" placeholder="Enter your email" autocomplete="email" maxlength="190" inputmode="email" required></div>
+            <p class="cx-error" id="cx-email-err" role="alert"></p>
+          </div>
+          </div>
+          <div class="cx-field" data-field="subject">
+            <label for="cx-subject">Subject</label>
+            <div class="cx-input"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></i><input id="cx-subject" type="text" name="subject" placeholder="What is it about?" maxlength="200" required></div>
+            <p class="cx-error" id="cx-subject-err" role="alert"></p>
+          </div>
+          <div class="cx-field" data-field="message">
+            <label for="cx-message">Message <small class="cx-count"><span>0</span>/2000</small></label>
+            <div class="cx-input cx-area"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></i><textarea id="cx-message" name="message" rows="5" placeholder="Tell us how we can help..." maxlength="2000" required></textarea></div>
+            <p class="cx-error" id="cx-message-err" role="alert"></p>
+          </div>
+          <button type="submit" class="cx-submit"><span class="cx-btn-text">Send message</span><span class="cx-spinner" aria-hidden="true"></span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></i></button>
+          <p class="cx-privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Your details stay private. We never share them.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <div class="cx-success" hidden>
+            <span class="cx-success-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <h3>Message sent</h3>
+            <p>Thanks for reaching out. We have your message and will reply to your email soon.</p>
+            <button type="button" class="cx-again">Send another message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= ENQUIRY (modal, opened from the header) ================= -->
+  <!-- Posts to api/contact.php like the contact section; the subject comes from the list. See assets/js/main.js. -->
+  <dialog class="enq" id="enquiry-modal" aria-labelledby="enq-title">
+    <form class="enq-panel" id="enquiry-form" action="api/contact.php" method="post" novalidate>
+      <button type="button" class="enq-close" data-enquiry-close aria-label="Close enquiry form">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <div class="enq-head">
+        <span class="enq-mark"><img class="seva-logo logo-badge" src="assets/brand/seva-logo.png" width="1038" height="427" alt=""></span>
+        <div>
+          <p class="eyebrow enq-eyebrow"><span class="dot"></span> Enquiry</p>
+          <h2 id="enq-title">How can we help?</h2>
+          <p>Tell us what you need. Our support team is here for you 24/7.</p>
+        </div>
+      </div>
+
+      <div class="cx-row">
+        <div class="cx-field" data-field="name">
+          <label for="enq-name">Your name</label>
+          <div class="cx-input"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></i><input id="enq-name" type="text" name="name" placeholder="Enter your name" autocomplete="name" maxlength="120" required></div>
+          <p class="cx-error" role="alert"></p>
+        </div>
+        <div class="cx-field" data-field="email">
+          <label for="enq-email">Email</label>
+          <div class="cx-input"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i><input id="enq-email" type="email" name="email" placeholder="Enter your email" autocomplete="email" maxlength="190" inputmode="email" required></div>
+          <p class="cx-error" role="alert"></p>
+        </div>
+      </div>
+      <div class="cx-field" data-field="subject">
+        <label for="enq-subject">I am asking about</label>
+        <div class="cx-input cx-select"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></i>
+          <select id="enq-subject" name="subject" required>
+            <option value="General enquiry">General enquiry</option>
+            <option value="Buying SevaCoin">Buying SevaCoin</option>
+            <option value="Wallet and setup help">Wallet and setup help</option>
+            <option value="Partnership">Partnership</option>
+            <option value="SevaWear medical apparel">SevaWear medical apparel</option>
+            <option value="Press and media">Press and media</option>
+            <option value="Something else">Something else</option>
+          </select>
+          <b class="cx-caret" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></b>
+        </div>
+        <p class="cx-error" role="alert"></p>
+      </div>
+      <div class="cx-field" data-field="message">
+        <label for="enq-message">Message <small class="cx-count"><span>0</span>/2000</small></label>
+        <div class="cx-input cx-area"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></i><textarea id="enq-message" name="message" rows="4" placeholder="Tell us a little about what you need..." maxlength="2000" required></textarea></div>
+        <p class="cx-error" role="alert"></p>
+      </div>
+      <button type="submit" class="cx-submit"><span class="cx-btn-text">Send enquiry</span><span class="cx-spinner" aria-hidden="true"></span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></i></button>
+      <p class="cx-privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Your details stay private. We never share them.</p>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <div class="cx-success" hidden>
+        <span class="cx-success-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <h3>Enquiry sent</h3>
+        <p>Thanks for reaching out. We have your enquiry and will reply to your email soon.</p>
+        <button type="button" class="cx-again" data-enquiry-close>Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ================= READER (opened from the "Find out more" rows and the Getting started step links) ================= -->
+  <!-- One panel per row (data-panel matches the row's data-read). Content follows the claims on sevacoin.com only:
+       no dates, prices or posts that do not exist yet. Previous / next walk through the four panels. -->
+  <dialog class="rd" id="explore-reader" aria-labelledby="rd-title">
+    <div class="rd-panel">
+      <header class="rd-top">
+        <span class="rd-crumb"><span id="rd-crumb-group">Explore</span> <i></i> <b id="rd-crumb-now">Foundation</b></span>
+        <button type="button" class="rd-close" data-reader-close aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+
+      <div class="rd-body" tabindex="-1">
+
+        <!-- 01 Foundation -->
+        <article class="rd-article" data-panel="foundation" data-group="explore">
+          <div class="rd-hero rd-hero-blue">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9 10v8M15 10v8M19 10v8"/><path d="M3 18h18M2 21h20"/></svg></span>
+            <div><p class="rd-kicker">01 · Foundation</p><h2 class="rd-title">The Seva Foundation</h2><p class="rd-lead">The mission behind SevaCoin: health and trust, built into the way care is paid for, shared and governed.</p></div>
+          </div>
+          <div class="rd-prose">
+            <h3>Our mission</h3>
+            <p><em>Seva</em> means selfless service. The Seva Foundation exists to put that idea at the centre of healthcare: care that is fair to reach, records that patients can trust, and a community that has a real say in how the system grows. SevaCoin is the tool the Foundation uses to get there.</p>
+            <h3>Building healthcare equity</h3>
+            <p>Too much of healthcare still depends on where you live and which paperwork reaches which desk. A shared, transparent ledger lets patients, providers and programmes work from the same trusted record, wherever they are.</p>
+            <h3>What the Foundation stands on</h3>
+            <ul class="rd-cards">
+              <li><b>Secure patient data exchange</b><span>Records move between the people who need them, protected by advanced cryptography.</span></li>
+              <li><b>Wellness incentives</b><span>Healthy habits and wellness programmes can be rewarded in SevaCoin.</span></li>
+              <li><b>Community governance</b><span>Holders help steer the health ecosystem, rather than a single gatekeeper.</span></li>
+            </ul>
+            <h3>Trust by design</h3>
+            <p>SevaCoin runs on a Proof-of-Stake network that uses 99% less energy than traditional mining, and confirms transactions in under three seconds worldwide. Every transfer is recorded on the ledger, so anyone can verify how funds move.</p>
+          </div>
+        </article>
+
+        <!-- 02 Blogs -->
+        <article class="rd-article" data-panel="blogs" data-group="explore" hidden>
+          <div class="rd-hero rd-hero-blue">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg></span>
+            <div><p class="rd-kicker">02 · Blogs</p><h2 class="rd-title">From the SevaCoin developers</h2><p class="rd-lead">Stay up to date with blog posts from the people building SevaCoin: how it works, what is next, and why.</p></div>
+          </div>
+          <div class="rd-prose">
+            <h3>What we write about</h3>
+            <ul class="rd-topics">
+              <li><b>Engineering</b><span>How the Proof-of-Stake network keeps confirmations under three seconds while using a fraction of the energy.</span></li>
+              <li><b>Security</b><span>How patient data stays protected end to end, and how to keep your own wallet safe.</span></li>
+              <li><b>Wellness programmes</b><span>How incentives are designed so they reward real, healthy habits.</span></li>
+              <li><b>Governance</b><span>How community proposals work and how holders take part.</span></li>
+            </ul>
+            <h3>Start here</h3>
+            <p>New to SevaCoin? The three-step guide on this page walks you through choosing a wallet, configuring it and getting your first SevaCoin.</p>
+            <div class="rd-note"><b>First posts are on the way.</b> Subscribe at the bottom of this page and new posts will reach your inbox as soon as they go live.</div>
+          </div>
+        </article>
+
+        <!-- 03 Announcements -->
+        <article class="rd-article" data-panel="announcements" data-group="explore" hidden>
+          <div class="rd-hero rd-hero-gold">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg></span>
+            <div><p class="rd-kicker">03 · Announcements</p><h2 class="rd-title">News from the SevaCoin team</h2><p class="rd-lead">Official announcements from the SevaCoin team can be found here, and only here.</p></div>
+          </div>
+          <div class="rd-prose">
+            <h3>What gets announced</h3>
+            <ul class="rd-topics">
+              <li><b>Network updates</b><span>Upgrades and changes to the SevaCoin network.</span></li>
+              <li><b>Wallets and access</b><span>New ways to buy, hold and use SevaCoin.</span></li>
+              <li><b>Programmes and partners</b><span>New wellness programmes and the healthcare partners joining them.</span></li>
+              <li><b>Governance</b><span>Community votes and their results.</span></li>
+            </ul>
+            <div class="rd-warn"><b>Stay safe.</b> The SevaCoin team will never ask for your recovery phrase or private keys, and will never ask you to send coins to "verify" a wallet. If a message does, it is not from us.</div>
+            <p>To hear about announcements first, subscribe at the bottom of this page.</p>
+          </div>
+        </article>
+
+        <!-- 04 FAQs -->
+        <article class="rd-article" data-panel="faqs" data-group="explore" hidden>
+          <div class="rd-hero rd-hero-blue">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-5 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M9.5 9.5a2 2 0 0 1 3.9.6c0 1.3-2 1.6-2 3"/><path d="M11.5 15.5h.01"/></svg></span>
+            <div><p class="rd-kicker">04 · FAQs</p><h2 class="rd-title">Frequently asked questions</h2><p class="rd-lead">Our responses to the questions we hear most about SevaCoin.</p></div>
+          </div>
+          <div class="rd-faq">
+            <details open><summary>What is SevaCoin?</summary><p>SevaCoin is a blockchain-based token tailored for healthcare innovation. It supports secure patient data exchange, incentivizes wellness programs, and fosters community governance in the health ecosystem.</p></details>
+            <details><summary>Do I need crypto experience to start?</summary><p>No. Choose a wallet, configure it with our guide, and get some SevaCoin. The three steps are explained in the Getting started section of this page.</p></details>
+            <details><summary>How do I get SevaCoin?</summary><p>There are lots of ways to get your hands on some SevaCoin. Once your wallet is set up you can receive it from another holder, and wellness programmes can reward you with it.</p></details>
+            <details><summary>Is my wallet secure?</summary><p>Advanced cryptographic security protects your transactions and wallet 24/7. Your recovery phrase is the key to your wallet: keep it offline, never share it, and never type it into a website or message.</p></details>
+            <details><summary>How fast are transactions?</summary><p>Transactions confirm in under three seconds, anywhere in the world.</p></details>
+            <details><summary>Is SevaCoin eco-friendly?</summary><p>Yes. SevaCoin uses a Proof-of-Stake consensus mechanism, which uses 99% less energy than traditional mining.</p></details>
+            <details><summary>Can I use it in my country?</summary><p>SevaCoin is built for global accessibility: you can send and receive payments anywhere in the world, instantly.</p></details>
+            <details><summary>How is patient data protected?</summary><p>Data exchange is secured with cryptography so records reach only the people who are meant to see them.</p></details>
+            <details><summary>I still have a question.</summary><p>Our support team is here for you 24/7. Use the Enquiry button in the header or the contact form at the bottom of this page.</p></details>
+          </div>
+        </article>
+
+        <!-- Getting started: step 1 -->
+        <article class="rd-article" data-panel="wallet" data-group="steps" hidden>
+          <div class="rd-hero rd-hero-blue">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h12v4"/><path d="M3 7v11a2 2 0 0 0 2 2h14a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1H5a2 2 0 0 1-2-2z"/><circle cx="16" cy="14.5" r="1.2"/></svg></span>
+            <div><p class="rd-kicker">Step 01 · Getting started</p><h2 class="rd-title">Choose your wallet</h2><p class="rd-lead">A wallet is necessary for people wanting to use, trade or hold SevaCoin. Here is how to pick the right one.</p></div>
+          </div>
+          <div class="rd-prose">
+            <h3>What a wallet does</h3>
+            <p>A wallet holds the keys that prove your SevaCoin belongs to you. It lets you see your balance, receive coins and send them anywhere in the world in under three seconds.</p>
+            <h3>The three kinds of wallet</h3>
+            <ul class="rd-topics rd-topics-3">
+              <li><b>Mobile</b><span>An app on your phone. Easiest for everyday payments and receiving rewards on the go.</span></li>
+              <li><b>Desktop</b><span>Software on your computer. Good for managing larger balances from home.</span></li>
+              <li><b>Hardware</b><span>A small physical device that keeps your keys offline. The safest choice for long-term holding.</span></li>
+            </ul>
+            <h3>What to check before you choose</h3>
+            <ol class="rd-checks">
+              <li>It supports the SevaCoin network.</li>
+              <li>You download it only from the official source or app store listing.</li>
+              <li>It gives you a recovery phrase that only you control.</li>
+              <li>It lets you protect it with a PIN, password or fingerprint.</li>
+            </ol>
+            <div class="rd-note"><b>Not sure which to pick?</b> Start with a mobile wallet. You can move your SevaCoin to a hardware wallet later as your balance grows.</div>
+          </div>
+        </article>
+
+        <!-- Getting started: step 2 -->
+        <article class="rd-article" data-panel="setup" data-group="steps" hidden>
+          <div class="rd-hero rd-hero-blue">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></span>
+            <div><p class="rd-kicker">Step 02 · Guide</p><h2 class="rd-title">Configure your wallet</h2><p class="rd-lead">After downloading, configure your wallet with this guide. It takes a few minutes.</p></div>
+          </div>
+          <div class="rd-prose">
+            <h3>Set it up step by step</h3>
+            <ol class="rd-steps">
+              <li><b>Install and open it</b><span>Choose "Create a new wallet".</span></li>
+              <li><b>Write down your recovery phrase</b><span>Copy the words on paper, in order, and keep them somewhere safe and offline. Never photograph them or store them online.</span></li>
+              <li><b>Confirm the phrase</b><span>The wallet asks you to re-enter some words to make sure you saved them correctly.</span></li>
+              <li><b>Lock it</b><span>Set a strong PIN or password, and turn on fingerprint or face unlock if your device has it.</span></li>
+              <li><b>Find your receive address</b><span>Tap "Receive" to see the address other people use to send you SevaCoin.</span></li>
+              <li><b>Test with a small amount</b><span>Before moving a larger balance, send or receive a small amount to check that everything works.</span></li>
+            </ol>
+            <div class="rd-warn"><b>Your recovery phrase is your wallet.</b> Anyone who has it can take your SevaCoin. The SevaCoin team will never ask you for it, and you should never type it into a website or message.</div>
+          </div>
+        </article>
+
+        <!-- Getting started: step 3 -->
+        <article class="rd-article" data-panel="get" data-group="steps" hidden>
+          <div class="rd-hero rd-hero-gold">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v4c0 1.7 2.7 3 6 3s6-1.3 6-3V7"/><path d="M3 11v4c0 1.7 2.7 3 6 3 1 0 2-.1 2.8-.4"/><circle cx="17" cy="16" r="4"/></svg></span>
+            <div><p class="rd-kicker">Step 03 · Getting started</p><h2 class="rd-title">Get some SevaCoin</h2><p class="rd-lead">There are lots of ways to get your hands on some SevaCoin. These are the main ones.</p></div>
+          </div>
+          <div class="rd-prose">
+            <h3>Ways to get SevaCoin</h3>
+            <ul class="rd-topics">
+              <li><b>Earn it through wellness</b><span>SevaCoin incentivizes wellness programs. Taking part in a programme can reward you in SevaCoin.</span></li>
+              <li><b>Receive it from someone</b><span>Share your receive address with another holder and they can send you SevaCoin from anywhere in the world, instantly.</span></li>
+              <li><b>Buy it</b><span>Where SevaCoin is offered for sale, you can buy it and send it to your wallet. New places to buy are published in our announcements.</span></li>
+              <li><b>Join the community</b><span>Take part in community governance and conversations, and stay up to date with what is coming next.</span></li>
+            </ul>
+            <h3>Stay safe</h3>
+            <ul class="rd-checks rd-checks-plain">
+              <li>Use only official SevaCoin links and our announcements.</li>
+              <li>Ignore offers to "double" your coins. They are always scams.</li>
+              <li>Check the address before every transfer. Transactions cannot be reversed.</li>
+            </ul>
+            <div class="rd-note"><b>Need a hand?</b> Our support team is here for you 24/7. Use "Ask us a question" below.</div>
+          </div>
+        </article>
+
+        <!-- What is SevaCoin: card 01 -->
+        <article class="rd-article" data-panel="data" data-group="about" hidden>
+          <div class="rd-hero rd-hero-blue">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            <div><p class="rd-kicker">01 · What is SevaCoin?</p><h2 class="rd-title">Secure patient data exchange</h2><p class="rd-lead">SevaCoin supports the secure exchange of patient data, so the right records reach the right people, and no one else.</p></div>
+          </div>
+          <div class="rd-prose">
+            <h3>Why it matters</h3>
+            <p>Patient records are often spread across clinics, labs and pharmacies that cannot easily share them. Every time a record has to be re-requested, posted or re-typed, care slows down and mistakes creep in.</p>
+            <h3>How SevaCoin helps</h3>
+            <ul class="rd-topics">
+              <li><b>Protected end to end</b><span>Advanced cryptographic security protects every exchange, 24/7.</span></li>
+              <li><b>A trusted record</b><span>A shared, transparent ledger means everyone works from the same verifiable history.</span></li>
+              <li><b>Fast, anywhere</b><span>Confirmations take under three seconds, wherever the patient and provider are.</span></li>
+              <li><b>Built for the community</b><span>How the system grows is steered by the community, not a single gatekeeper.</span></li>
+            </ul>
+            <div class="rd-note"><b>In short:</b> secure, transparent and community-driven data exchange, so care can move as fast as the people who need it.</div>
+          </div>
+        </article>
+
+        <!-- What is SevaCoin: card 02 -->
+        <article class="rd-article" data-panel="wellness" data-group="about" hidden>
+          <div class="rd-hero rd-hero-blue">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+            <div><p class="rd-kicker">02 · What is SevaCoin?</p><h2 class="rd-title">Wellness program incentives</h2><p class="rd-lead">SevaCoin incentivizes wellness programs, rewarding the healthy habits that keep people well.</p></div>
+          </div>
+          <div class="rd-prose">
+            <h3>Rewarding prevention, not just treatment</h3>
+            <p>Most healthcare money is spent after someone gets sick. Wellness programmes work the other way round: they encourage the everyday choices that keep people healthy. SevaCoin gives those programmes a simple, global way to say thank you.</p>
+            <h3>How it works</h3>
+            <ol class="rd-steps">
+              <li><b>Join a programme</b><span>Take part in a wellness programme that rewards in SevaCoin.</span></li>
+              <li><b>Build healthy habits</b><span>Reach the goals the programme sets.</span></li>
+              <li><b>Get rewarded</b><span>SevaCoin arrives in your wallet, confirmed in under three seconds.</span></li>
+            </ol>
+            <h3>Good for people and the planet</h3>
+            <p>SevaCoin runs on Proof-of-Stake, which uses 99% less energy than traditional mining, so rewarding wellness does not cost the earth.</p>
+          </div>
+        </article>
+
+        <!-- What is SevaCoin: card 03 -->
+        <article class="rd-article" data-panel="governance" data-group="about" hidden>
+          <div class="rd-hero rd-hero-gold">
+            <span class="rd-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
+            <div><p class="rd-kicker">03 · What is SevaCoin?</p><h2 class="rd-title">Community governance</h2><p class="rd-lead">SevaCoin fosters community governance in the health ecosystem. The people it serves help decide where it goes.</p></div>
+          </div>
+          <div class="rd-prose">
+            <h3>A say for everyone</h3>
+            <p><em>Seva</em> means selfless service. Community governance puts that idea into practice: instead of one company deciding everything, the community proposes, discusses and votes on how the health ecosystem grows.</p>
+            <h3>How the community takes part</h3>
+            <ul class="rd-topics">
+              <li><b>Propose</b><span>Suggest new programmes, partners and improvements.</span></li>
+              <li><b>Discuss</b><span>Join the conversations in our worldwide community.</span></li>
+              <li><b>Vote</b><span>Help decide which proposals move forward.</span></li>
+              <li><b>See the results</b><span>Votes and their outcomes are shared in our announcements, for everyone to check.</span></li>
+            </ul>
+            <div class="rd-note"><b>Transparent by design.</b> Every transaction is recorded on the ledger, so the community can verify how funds move.</div>
+          </div>
+        </article>
+      </div>
+
+      <footer class="rd-foot">
+        <button type="button" class="rd-step" data-reader-step="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span>Previous<b id="rd-prev-name">FAQs</b></span></button>
+        <button type="button" class="rd-ask" data-enquiry>Ask us a question</button>
+        <button type="button" class="rd-step rd-step-next" data-reader-step="1"><span>Next<b id="rd-next-name">Blogs</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </footer>
+    </div>
+  </dialog>
+
+  <!-- ================= VIDEO (opened from the mission section) ================= -->
+  <dialog class="vd" id="video-modal" aria-label="What is SevaCoin? video">
+    <div class="vd-panel">
+      <button type="button" class="vd-close" data-video-close aria-label="Close video">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <video class="vd-player" controls playsinline preload="none"></video>
+    </div>
+  </dialog>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="brand" aria-label="SEVA Coin home, back to top">
+          <span class="seva-coin footer-coin" data-seva-coin data-static data-label="SEVA Coin"></span>
+          <img class="seva-logo" src="assets/brand/seva-logo-white.png" width="1038" height="427" alt="">
+        </a>
+        <p>Secure, transparent and community-driven. Empowering healthier lives through blockchain.</p>
+        <p class="footer-parent">SEVA Coin is from <a href="https://www.sevamedcare.com/" target="_blank" rel="noopener">SEVA Healthcare<span class="sr-only"> (opens in a new tab)</span></a>, a pain management network in Tulsa, Dallas and New Mexico, building healthcare equity.</p>
+        <p class="footer-parent-links">
+          <a href="https://www.sevamedcare.com/" target="_blank" rel="noopener">sevamedcare.com <span aria-hidden="true">↗</span></a>
+          <a href="https://www.sevawear.com/" target="_blank" rel="noopener">SevaWear apparel <span aria-hidden="true">↗</span></a>
+        </p>
+      </div>
+
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#">Buy &amp; Sell</a></li>
+          <li><a href="#">Development</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Disclosures</a></li>
+          <li><a href="#">Latest News</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Subscribe</h4>
+        <p>Subscribe to get the latest news from us.</p>
+                <form class="subscribe" action="api/subscribe.php" method="post">
+          <label class="sr-only" for="sub-email">Email address</label>
+          <input id="sub-email" type="email" name="email" placeholder="Enter Email" required>
+          <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Copyright | SEVA Coin by SEVA Healthcare</p>
+    </div>
+  </footer>
+
+  <script>
+    window.gtranslateSettings = {
+      default_language: "en",
+      languages: ["en","ja","fr","de","zh-CN","zh-TW","pt","no","th","es"],
+      wrapper_selector: ".gtranslate_wrapper",
+      flag_size: 16,
+      switcher_horizontal_position: "inline"
+    };
+  </script>
+  <script src="assets/coin/seva-coin.js?v=20261017d" defer></script>
+  <script src="assets/js/main.js?v=20261017b" defer></script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+  <script type="module" src="assets/js/scene.js?v=20261017b"></script>
+</body>
+</html>

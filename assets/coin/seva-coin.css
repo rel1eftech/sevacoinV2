@@ -1,0 +1,71 @@
+/* SEVA Coin component (see seva-coin.js). Size: --coin-size (default 320px). */
+.seva-coin { --coin-size: 320px; display: inline-flex; flex-direction: column; align-items: center; gap: 18px; width: var(--coin-size); max-width: 100%; }
+
+.sc-stage { position: relative; width: 100%; aspect-ratio: 1; perspective: 900px; }
+/* soft shadow under the coin; it narrows as the coin turns edge-on */
+.sc-stage::after { content: ""; position: absolute; left: 16%; right: 16%; bottom: -10%; height: 9%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(2, 8, 20, .55), rgba(2, 8, 20, 0)); filter: blur(3px);
+  animation: sc-shadow 7s ease-in-out infinite; }
+.sc-tilt { width: 100%; height: 100%; transform-style: preserve-3d;
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform .35s ease-out; }
+.sc-flipper { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: sc-flip 7s ease-in-out infinite; }
+.sc-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.sc-back { transform: rotateY(180deg); }
+.sc-svg { display: block; width: 100%; height: 100%; overflow: visible; }
+
+/* front ~3s, flip, back ~3s, flip back: 7s loop */
+@keyframes sc-flip {
+  0%, 42% { transform: rotateY(0deg); }
+  50%, 92% { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}
+@keyframes sc-shadow {
+  0%, 42%, 50%, 92%, 100% { transform: scaleX(1); opacity: 1; }
+  46%, 96% { transform: scaleX(.5); opacity: .65; }
+}
+
+/* lettering on the face */
+.sc-arc-text { font: 700 11.5px/1 "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif; letter-spacing: 5px; fill: #cfe3f2; opacity: .75; }
+.sc-coin-label { font: 700 18px/1 ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace; letter-spacing: 9px; fill: #9ad2e2; }
+
+/* light sweep across the face every 3.5s */
+.sc-shine { animation: sc-shine 3.5s ease-in-out infinite; }
+@keyframes sc-shine { 0% { transform: translateX(0); } 55%, 100% { transform: translateX(600px); } }
+/* the caduceus watermark breathes between 10% and 20% */
+.sc-cad { animation: sc-breathe 5s ease-in-out infinite alternate; }
+@keyframes sc-breathe { from { opacity: .26; } to { opacity: .34; } }
+
+/* a small twinkle on the top bar */
+.sc-spark { transform-box: fill-box; transform-origin: center; animation: sc-twinkle 3.5s ease-in-out infinite; }
+@keyframes sc-twinkle { 0%, 60%, 100% { opacity: 0; scale: .3; } 75% { opacity: 1; scale: 1; } }
+
+/* controls */
+.sc-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.sc-btn { appearance: none; cursor: pointer; padding: 8px 14px; border-radius: 999px; font: 600 .8rem/1 "Plus Jakarta Sans", system-ui, sans-serif;
+  color: #12304f; background: rgba(255, 255, 255, .92); border: 1px solid rgba(97, 151, 201, .6); transition: background .2s ease, color .2s ease; }
+.sc-btn:hover { background: #12304f; color: #fff; }
+.sc-btn:focus-visible { outline: 3px solid #6197c9; outline-offset: 3px; }
+@media (prefers-color-scheme: dark) { .sc-btn { color: #dbeaf5; background: rgba(18, 48, 79, .85); border-color: rgba(154, 210, 226, .45); } .sc-btn:hover { color: #12304f; background: #9ad2e2; } }
+[data-theme="light"] .sc-btn { color: #12304f; background: rgba(255, 255, 255, .92); border-color: rgba(97, 151, 201, .6); }
+[data-theme="dark"] .sc-btn { color: #dbeaf5; background: rgba(18, 48, 79, .85); border-color: rgba(154, 210, 226, .45); }
+
+/* states */
+.seva-coin.is-paused .sc-flipper, .seva-coin.is-paused .sc-stage::after, .seva-coin.is-paused .sc-shine { animation-play-state: paused; }
+.seva-coin.is-manual .sc-flipper { animation: none; transform: rotateY(0deg); transition: transform .8s cubic-bezier(.45, 0, .25, 1); }
+.seva-coin.is-manual.show-back .sc-flipper { transform: rotateY(180deg); }
+.seva-coin.is-manual .sc-stage::after { animation: none; }
+.seva-coin.is-static .sc-flipper, .seva-coin.is-static .sc-stage::after, .seva-coin.is-static .sc-shine { animation: none; }
+.seva-coin.is-static .sc-shine { display: none; }
+.seva-coin.is-static .sc-stage::after { display: none; }
+
+/* only the "E" option chosen for this coin shows */
+.sc-e { display: none; }
+.seva-coin[data-variant="a"] .sc-e-a, .seva-coin[data-variant="b"] .sc-e-b, .seva-coin[data-variant="c"] .sc-e-c { display: inline; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-flipper, .sc-stage::after, .sc-shine, .sc-cad, .sc-spark { animation: none; }
+  .sc-spark { display: none; }
+  .sc-shine { display: none; }
+  .sc-tilt, .seva-coin.is-manual .sc-flipper { transition: none; }
+  .sc-btn[data-sc="pause"] { display: none; }
+}
